@@ -163,6 +163,21 @@ if ($err) {
                 
             </tbody>
         </table>
+        <!-- <table class="table" id="table_id">
+            <thead class="table-dark">
+                <tr>
+                    <th>Paket</th>
+                    <th>Deskripsi</th>
+                    <th>Ongkir</th>
+                    <th>Estimasi (hari)</th>
+                </tr>
+            </thead>
+            <tbody id="biaya_ongkir">
+                
+            </tbody>
+        </table> -->
+        <!-- <div id="biaya_ongkir"></div> -->
+
     </div>
     <!-- End Content -->
 
