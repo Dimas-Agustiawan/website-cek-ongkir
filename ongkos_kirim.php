@@ -31,10 +31,6 @@ if ($err) {
   echo "cURL Error #:" . $err;
 } else {
     $list = json_decode($response);
-    // $target->murni="asli";
-    // $target->age=20;
-    // $trg = json_encode($target);
-    // echo $trg;
     // echo "<pre>";
     // print_r($list->rajaongkir->results[0]->costs);
     // echo "</pre>";

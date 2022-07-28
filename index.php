@@ -49,10 +49,6 @@ if ($err) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
     <!-- End font -->
 
-    <!-- dataTables -->
-    <link rel="stylesheet" href="datatables.min.css">
-    <!-- End dataTables -->
-
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- End AOS -->
@@ -150,20 +146,7 @@ if ($err) {
                 </button>
             </div>
         </div>
-        <table id="table_id" class="display">
-            <thead>
-                <tr>
-                    <th>Paket</th>
-                    <th>Deskripsi</th>
-                    <th>Ongkir</th>
-                    <th>Estimasi (hari)</th>
-                </tr>
-            </thead>
-            <tbody id="biaya_ongkir">
-                
-            </tbody>
-        </table>
-        <!-- <table class="table" id="table_id">
+        <table class="table" id="table_id">
             <thead class="table-dark">
                 <tr>
                     <th>Paket</th>
@@ -175,8 +158,7 @@ if ($err) {
             <tbody id="biaya_ongkir">
                 
             </tbody>
-        </table> -->
-        <!-- <div id="biaya_ongkir"></div> -->
+        </table>
 
     </div>
     <!-- End Content -->
@@ -196,14 +178,8 @@ if ($err) {
 
     <!-- End Footer -->
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <script src="bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="datatables.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready( function () {
-            $('#table_id').DataTable();
-        });
-    </script>
     <!-- <script type="text/javascript">
         fetch('https://api.rajaongkir.com/starter/province?id=12', {
             headers : { key : '0a0294524bcb1fad37833fc8b55616d2' }
