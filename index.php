@@ -53,13 +53,13 @@ if ($err) {
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- End AOS -->
     <style>
-        body {
+        .navbar, .content {
             font-family: 'Poppins', sans-serif;
             font-weight: 400;
         }
     </style>
 </head>
-<body id="body">
+<body id="body" data-aos="zoom-in-down" data-aos-duration="1500" data-aos-once="true">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-light sticky-top">
       <div class="container">
@@ -84,110 +84,121 @@ if ($err) {
     <!-- End Navbar -->
 
     <!-- Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="text-center mt-4 mb-5" data-aos="fade-up" data-aos-duration="1000">Cek Ongkir</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-5">
-                <div class="mb-2">Kota pengirim barang :</div>
-                <select class="form-select mb-4 shadow rounded" id="id_provinsi" name="id_pengirim" onchange="Cari_kota_pengirim(this.value)" aria-label="Default select example" name="provinsi_pengirim" data-aos="flip-left" data-aos-duration="1000">
-                    <option selected disabled>-- Pilih provinsi pengirim --</option>
-                    <?php
-                        foreach($list->rajaongkir->results as $provinsi) {
-                            echo '<option value="'.$provinsi->province_id.'">'.$provinsi->province.'</option>';
-                        }
-                    ?>
-                </select>
-                <select class="form-select mb-4 shadow rounded" id="kota_pengirim" aria-label="Default select example" name="provinsi_pengirim" data-aos="flip-left" data-aos-duration="1000">
-                    <option>-- Pilih kota pengirim --</option>
-                </select>
-                <p id="error_pengirim"></p>
-                
-                <div class="mb-2">Kota penerima barang :</div>
-                <select class="form-select mb-4 shadow rounded" onchange="kota_penerima(this.value)" aria-label="Default select example" name="provinsi_penerima" data-aos="flip-left" data-aos-duration="1000">
-                    <option selected disabled>-- Pilih provinsi penerima --</option>
-                    <?php
-                        foreach($list->rajaongkir->results as $provinsi) {
-                            echo '<option value='.$provinsi->province_id.'>'.$provinsi->province.'</option>';
-                        }
-                    ?>
-                </select>
-                <select class="form-select mb-4 shadow rounded" aria-label="Default select example" name="kota_tujuan" id="kota_penerima" data-aos="flip-left" data-aos-duration="1000">
-                    <option>-- Pilih kota penerima --</option>
-                </select>
-                <p id="error_penerima"></p>
-
-                <div class="mb-2">Berat Paket :</div>
-                <div class="input-group mb-4 shadow rounded" data-aos="flip-left" data-aos-duration="1000">
-                    <input class="form-control form-control" id="berat_paket" type="text" placeholder="berat barang" aria-label=".form-control-lg example">
-                    <span class="input-group-text">gram</span>
+    <section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center mt-4 mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Cek Ongkir</h1>
                 </div>
-                <p id="error_berat_paket"></p>
-
             </div>
-            <div class="col-lg-5 offset-lg-1">
-                <div class="mb-2">Kurir :</div>
-                <select class="form-select mb-4 shadow rounded" aria-label="Default select example" name="kurir" id="kurir" data-aos="flip-left" data-aos-duration="1000">
-                    <option selected disabled>-- Pilih kurir --</option>
-                    <option value="jne"> jne </option>
-                    <option value="pos"> pos indonesia </option>
-                    <option value="tiki"> tiki </option>
-                </select>
-                <p id="error_kurir"></p>
-                <button class="btn btn-outline-primary shadow rounded" onclick="cost_kirim()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square me-1">
-                        <polyline points="9 11 12 14 22 4"></polyline>
-                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-                    </svg>
-                    Cek Ongkir
-                </button>
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="mb-2">Kota pengirim barang :</div>
+                    <select class="form-select mb-4 shadow rounded" id="id_provinsi" name="id_pengirim" onchange="Cari_kota_pengirim(this.value)" aria-label="Default select example" name="provinsi_pengirim" data-aos="flip-left" data-aos-duration="500" data-aos-once="true">
+                        <option selected disabled>-- Pilih provinsi pengirim --</option>
+                        <?php
+                            foreach($list->rajaongkir->results as $provinsi) {
+                                echo '<option value="'.$provinsi->province_id.'">'.$provinsi->province.'</option>';
+                            }
+                        ?>
+                    </select>
+                    <select class="form-select mb-4 shadow rounded" id="kota_pengirim" aria-label="Default select example" name="provinsi_pengirim" data-aos="flip-left" data-aos-duration="1000" data-aos-once="true">
+                        <option>-- Pilih kota pengirim --</option>
+                    </select>
+                    <p id="error_pengirim"></p>
+                    
+                    <div class="mb-2">Kota penerima barang :</div>
+                    <select class="form-select mb-4 shadow rounded" onchange="kota_penerima(this.value)" aria-label="Default select example" name="provinsi_penerima" data-aos="flip-left" data-aos-duration="1500" data-aos-once="true">
+                        <option selected disabled>-- Pilih provinsi penerima --</option>
+                        <?php
+                            foreach($list->rajaongkir->results as $provinsi) {
+                                echo '<option value='.$provinsi->province_id.'>'.$provinsi->province.'</option>';
+                            }
+                        ?>
+                    </select>
+                    <select class="form-select mb-4 shadow rounded" aria-label="Default select example" name="kota_tujuan" id="kota_penerima" data-aos="flip-left" data-aos-duration="2000" data-aos-once="true">
+                        <option>-- Pilih kota penerima --</option>
+                    </select>
+                    <p id="error_penerima"></p>
+    
+                    <div class="mb-2">Berat Paket :</div>
+                    <div class="input-group mb-4 shadow rounded" data-aos="flip-left" data-aos-duration="2500" data-aos-once="true">
+                        <input class="form-control form-control" id="berat_paket" type="text" placeholder="berat barang" aria-label=".form-control-lg example">
+                        <span class="input-group-text">gram</span>
+                    </div>
+                    <p id="error_berat_paket"></p>
+    
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="mb-2">Kurir :</div>
+                    <select class="form-select mb-4 shadow rounded" aria-label="Default select example" name="kurir" id="kurir" data-aos="flip-left" data-aos-duration="1000" data-aos-once="true">
+                        <option selected disabled>-- Pilih kurir --</option>
+                        <option value="jne"> jne </option>
+                        <option value="pos"> pos indonesia </option>
+                        <option value="tiki"> tiki </option>
+                    </select>
+                    <p id="error_kurir"></p>
+                    <button class="btn btn-outline-primary shadow rounded" onclick="cost_kirim()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square me-1">
+                            <polyline points="9 11 12 14 22 4"></polyline>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                        Cek Ongkir
+                    </button>
+                </div>
             </div>
+            <table class="table" id="table_id">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Paket</th>
+                        <th>Deskripsi</th>
+                        <th>Ongkir</th>
+                        <th>Estimasi (hari)</th>
+                    </tr>
+                </thead>
+                <tbody id="biaya_ongkir">
+                    
+                </tbody>
+            </table>
         </div>
-        <table class="table" id="table_id">
-            <thead class="table-dark">
-                <tr>
-                    <th>Paket</th>
-                    <th>Deskripsi</th>
-                    <th>Ongkir</th>
-                    <th>Estimasi (hari)</th>
-                </tr>
-            </thead>
-            <tbody id="biaya_ongkir">
-                
-            </tbody>
-        </table>
-
-    </div>
+    </section>
     <!-- End Content -->
 
     <!-- Footer -->
-    <div class="d-flex align-items-end mt-4">
-        <div class="container-fluid">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12" style="min-height: 12em;">
-                        
+    <section class="footer">
+        <div class="d-flex align-items-end mt-5">
+            <div class="container-fluid bg-dark">
+                <div class="container">
+                    <div class="row" style="min-height: 15em; margin-top: 50px;">
+                        <div class="col-lg-4" >
+                            <div class="fs-5 text-light text-decoration-underline mt-3">SERVICES</div>
+                            <div class="text-light mt-2">Branding</div>
+                            <div class="text-light mt-1">Design</div>
+                            <div class="text-light mt-1">Marketing</div>
+                            <div class="text-light mt-1">Advertisement</div>
+                        </div>
+                        <div class="col-lg-4" >
+                            <div class="fs-5 text-light text-decoration-underline mt-3">COMPANY</div>
+                            <div class="text-light mt-2">About us</div>
+                            <div class="text-light mt-1">Jobs</div>
+                            <div class="text-light mt-1">Press kit</div>
+                        </div>
+                        <div class="col-lg-4" >
+                            <div class="fs-5 text-light text-decoration-underline mt-3">LEGAL</div>
+                            <div class="text-light mt-2">Term of use</div>
+                            <div class="text-light mt-1">Privacy policy</div>
+                            <div class="text-light mt-1">Cookie policy</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- End Footer -->
 
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
-    <!-- <script type="text/javascript">
-        fetch('https://api.rajaongkir.com/starter/province?id=12', {
-            headers : { key : '0a0294524bcb1fad37833fc8b55616d2' }
-        })
-        // .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(error => console.log('Error', error));
-    </script> -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();

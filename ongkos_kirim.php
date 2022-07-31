@@ -34,6 +34,12 @@ if ($err) {
     // echo "<pre>";
     // print_r($list->rajaongkir->results[0]->costs);
     // echo "</pre>";
+    // $target->nama = "dimas";
+    // echo $myJSON = json_encode($target);
+    // echo $age = 20;
+    // $myJSON = json_encode($target);
+    // echo $nama;
+    // echo $age;
     
     if ($_GET['id_kota_pengirim'] != "-- Pilih kota pengirim --" && $_GET['id_kota_penerima'] != "-- Pilih kota penerima --" && $_GET['berat_paket'] != "" && $_GET['kurir'] != "-- Pilih kurir --") {
       foreach ($list->rajaongkir->results[0]->costs as $ongkir) {
