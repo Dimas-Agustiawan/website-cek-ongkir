@@ -23,14 +23,7 @@ curl_close($curl);
 if ($err) {
     echo "cURL Error #:" . $err;
 } else {
-    // echo $response;
     $list = json_decode($response);
-    // echo "<pre>";
-    // print_r($list);
-    // echo "</pre>";
-    // echo $list;
-    // document.getElementById("demo").innerHTML = "I have changed!"; 
-    
 }
 ?>
 <!DOCTYPE html>
@@ -165,36 +158,13 @@ if ($err) {
     <!-- End Content -->
 
     <!-- Footer -->
-    <section class="footer">
-        <div class="d-flex align-items-end mt-5">
-            <div class="container-fluid bg-dark">
-                <div class="container">
-                    <div class="row" style="min-height: 15em; margin-top: 50px;">
-                        <div class="col-lg-4" >
-                            <div class="fs-5 text-light text-decoration-underline mt-3">SERVICES</div>
-                            <div class="text-light mt-2">Branding</div>
-                            <div class="text-light mt-1">Design</div>
-                            <div class="text-light mt-1">Marketing</div>
-                            <div class="text-light mt-1">Advertisement</div>
-                        </div>
-                        <div class="col-lg-4" >
-                            <div class="fs-5 text-light text-decoration-underline mt-3">COMPANY</div>
-                            <div class="text-light mt-2">About us</div>
-                            <div class="text-light mt-1">Jobs</div>
-                            <div class="text-light mt-1">Press kit</div>
-                        </div>
-                        <div class="col-lg-4" >
-                            <div class="fs-5 text-light text-decoration-underline mt-3">LEGAL</div>
-                            <div class="text-light mt-2">Term of use</div>
-                            <div class="text-light mt-1">Privacy policy</div>
-                            <div class="text-light mt-1">Cookie policy</div>
-                        </div>
-                    </div>
-                </div>
+    <section class="footer mt-5">
+        <footer class="border-top mt-3">
+            <div class="container py-3 text-center">
+                Copyright &#169; <script>document.write(new Date().getFullYear())</script>.
             </div>
-        </div>
+        </footer>
     </section>
-
     <!-- End Footer -->
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
